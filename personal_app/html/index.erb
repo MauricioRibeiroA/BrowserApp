@@ -1,7 +1,7 @@
 <html>
   <head>
-    <title>Atividades</title>
-    <link rel='stylesheet' href='/css/spriggly_wiggly_style.css' type='text/css' ></link>
+    <title>Personal Browser</title>
+    <link rel='stylesheet' href='/css/activity_style.css' type='text/css' ></link>
   </head>
   <body>
     <h1><%= @name %>Welcome!Here are all your activies</h1>
@@ -11,5 +11,6 @@
         <li><%= atividade.descricao %></li>
       <% end %>
     </ul>
+    <h4><a href='/atividades/create'>Create a New Activity</a></h4>
   </body>
 </html>

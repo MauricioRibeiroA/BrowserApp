@@ -45,6 +45,19 @@ get('/') do
   @name = 'Mauricio'
   @atividades = Atividade.all
   erb :'index'
+  #  erb(:index, locals: { atividades: atividades })
 end
 
+# render a create restaurant form
+get('/atividades/create') do
+  erb(:create_atividade)
+end
+
+# create a new restaurant
+post('/atividades') do
+  new_activity = Atividade.new
+  new_activity.descricao = params[:descricao]
+  new_activity.save
+  redirect('/')
+end
 	
