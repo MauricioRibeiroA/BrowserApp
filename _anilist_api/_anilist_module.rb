@@ -6,12 +6,23 @@ module Anilist
 #make action buttons to call the methods
 
 	def self.anime_airing(anime_id)
-		response_airing = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/airing?access_token=OevsUqiuGoe0JDaZMCXaALaY0XtECg0zKFm10hv2").to_a.last
+		response_airing = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/airing?access_token=tRo0fqha1g1zV0RK94YRzBA9hFqdYAQyrlAX6Y77").to_a
 	end
 
 	def self.anime_info(anime_id)
-		response_info = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/?access_token=OevsUqiuGoe0JDaZMCXaALaY0XtECg0zKFm10hv2").to_hash
+		response_info = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/?access_token=tRo0fqha1g1zV0RK94YRzBA9hFqdYAQyrlAX6Y77").to_hash
 	end
+
+	def self.anime_info_and_airing
+	  Anilist.anime_info(21).each do |k, v|
+	    if v == "currently airing"
+	      title = Anilist.anime_info(21)["title_romaji"]	
+	      time = Anilist.anime_info(21)["airing"]["time"]
+	      end
+        end
+	end
+
+
 end
 my_favourites_id = [1, 21]
 airing = []
@@ -27,14 +38,6 @@ end
 =end
 
 
-
-airing = Anilist.anime_info(21).select do |k, v|
-	#if Anilist.anime_info(21).has_value?("currently airing") an option to iterate through all currently airing episodes
-	if v == "currently airing"
-	  p Anilist.anime_info(21)["title_romaji"]	
-	  p Anilist.anime_info(21)["airing"]["time"]
-	end
-end
 
 
 
