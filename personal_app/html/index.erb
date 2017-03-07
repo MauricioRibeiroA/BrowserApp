@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Atividades</title>
+    <link rel='stylesheet' href='/css/spriggly_wiggly_style.css' type='text/css' ></link>
+  </head>
+  <body>
+    <h1><%= @name %>Welcome!Here are all your activies</h1>
+    <ul>
+      <% @atividades.each do|atividade| %>
+      <li><%= atividade.created_at %></li>
+        <li><%= atividade.descricao %></li>
+      <% end %>
+    </ul>
+  </body>
+</html>
