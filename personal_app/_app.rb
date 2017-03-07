@@ -8,6 +8,8 @@ set :views, settings.root + '/html'
 
 require 'data_mapper'
 
+DataMapper::Logger.new($stdout, :debug)
+DataMapper.setup(:default, 'sqlite::memory:')
 DataMapper.setup(:default, 'sqlite:atividade.db')
 
 class Atividade
