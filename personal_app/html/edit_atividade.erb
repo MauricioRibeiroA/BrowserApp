@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Personal Browser</title>
+    <style>
+      p, h1, h2, h3, h4, ul, li, a, label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #157DA6;
+        text-align: center;
+      }
+      .centered {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Edit some note!</h3>
+    <h4><a href='/'>All Notes</a></h4>
+
+    <%# a form that edits an existing restaurant %>
+<form action='/atividades/<%= @activity.id %>' method='post' class='centered'>
+  <label>Notes</label>
+  <input type='text' name='descricao' value='<%= @activity.descricao %>' required/>
+  <input type='hidden' name='_method' value='put'>
+  <input type='submit' value='edit atividade' />
+</form>
+
+  </body>
+</html>
+
+<%# a form that edits an existing restaurant %>
+

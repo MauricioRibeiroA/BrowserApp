@@ -62,7 +62,14 @@ post('/atividades') do
 end
 	
 # render the restaurant of concern to the browser
-get('/atividades/:created_at/edit') do
-  @activity = Atividade.get(params[:created_at])
-  render(:edit_atividade)
+get('/atividades/:id/edit') do
+  @activity = Atividade.get(params[:id])
+  erb(:edit_atividade)
+end
+
+put('/atividades/:id') do
+  atividade = Atividade.get(params[:id])
+  atividade.descricao = params[:descricao]
+  atividade.save
+  redirect('/')
 end
