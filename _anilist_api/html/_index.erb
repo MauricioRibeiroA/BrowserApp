@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Personal Browser</title>
+    <link rel='stylesheet' href='/css/activity_style.css' type='text/css' ></link>
+  </head>
+  <body>
+    <h1><%= @name %>Welcome!Here are all your activies</h1>
+    <ul>
+      <% @atividades.each do|atividade| %>
+       <%# form to delete an existing activity%>
+        <form action='/atividades/<%= atividade.id %>' method='POST' class='pull-right'>
+         <input type='hidden' name='_method' value='DELETE'/>
+          <button type='submit' class='super-sport'>X</button>
+        </form>
+      <li><%= atividade.created_at %></li>
+        <%= atividade.descricao %><br/>
+        <%# a link that routes to an edit activity form %>
+         <a href='/atividades/<%= atividade.id %>/edit'>edit</a>
+      <% end %>
+   </ul>
+    <h4><a href='/atividades/create'>Create a New Activity</a></h4>
+  </body>
+</html>
+
+
