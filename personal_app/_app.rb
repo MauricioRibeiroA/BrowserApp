@@ -48,12 +48,12 @@ get('/') do
   #  erb(:index, locals: { atividades: atividades })
 end
 
-# render a create restaurant form
+# render the activity form
 get('/atividades/create') do
   erb(:create_atividade)
 end
 
-# create a new restaurant
+# create a new activity
 post('/atividades') do
   new_activity = Atividade.new
   new_activity.descricao = params[:descricao]
@@ -61,7 +61,7 @@ post('/atividades') do
   redirect('/')
 end
 	
-# render the restaurant of concern to the browser
+# render the activity
 get('/atividades/:id/edit') do
   @activity = Atividade.get(params[:id])
   erb(:edit_atividade)
@@ -71,5 +71,11 @@ put('/atividades/:id') do
   atividade = Atividade.get(params[:id])
   atividade.descricao = params[:descricao]
   atividade.save
+  redirect('/')
+end
+
+# delete activity
+delete('/atividades/:id') do
+  Atividade.get(params[:id]).destroy
   redirect('/')
 end

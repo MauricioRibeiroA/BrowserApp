@@ -15,10 +15,11 @@
   <body>
     <h3>Create a new activity!</h3>
     <h4><a href='/'>All Activities</a></h4>
-    <%# a form that can create a new restaurant %>
+    <label>Descricao</label>
+    <%# a form that can create a new activity %>
 <form action='/atividades' method='POST' class='centered'>
-  <label>Descricao</label>
-  <input type='text' name='descricao' required/>
+<textarea type='text' rows="4" cols="50" name="descricao" required></textarea>
+  
   <input type='submit' value='New activity' />
 </form>
   </body>

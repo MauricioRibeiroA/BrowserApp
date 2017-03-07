@@ -16,7 +16,7 @@
     <h3>Edit some note!</h3>
     <h4><a href='/'>All Notes</a></h4>
 
-    <%# a form that edits an existing restaurant %>
+    <%# a form that edits an existing activity %>
 <form action='/atividades/<%= @activity.id %>' method='post' class='centered'>
   <label>Notes</label>
   <input type='text' name='descricao' value='<%= @activity.descricao %>' required/>
@@ -27,5 +27,4 @@
   </body>
 </html>
 
-<%# a form that edits an existing restaurant %>
 
