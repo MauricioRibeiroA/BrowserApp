@@ -61,3 +61,8 @@ post('/atividades') do
   redirect('/')
 end
 	
+# render the restaurant of concern to the browser
+get('/atividades/:created_at/edit') do
+  @activity = Atividade.get(params[:created_at])
+  render(:edit_atividade)
+end

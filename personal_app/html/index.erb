@@ -8,9 +8,12 @@
     <ul>
       <% @atividades.each do|atividade| %>
       <li><%= atividade.created_at %></li>
-        <li><%= atividade.descricao %></li>
+       
+        <%= atividade.descricao %><br/>
+        <%# a link that routes to an edit activity form %>
+         <a href='/atividades/<%= atividade.id %>/edit'>edit activity</a>
       <% end %>
-    </ul>
+   </ul>
     <h4><a href='/atividades/create'>Create a New Activity</a></h4>
   </body>
 </html>
