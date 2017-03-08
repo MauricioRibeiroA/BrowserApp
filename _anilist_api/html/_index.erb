@@ -5,8 +5,11 @@
   </head>
   <body>
     <h1>Welcome! Here you can control all episodes from your favourite animes</h1>
-    <h2>Hey my friend. <%= @title %> just announced the last episode on <%= @new_time %></h2>
+    <% @new_hash.each do |anime, date| %>
+    <% new_date = Time.parse(date).strftime("%m/%d/%Y") %>
+    <h2>Hey my friend. <%= anime %> just announced the last episode on <%= new_date %></h2>
+    <% end %>
   </body>
 </html>
 
-
+Let's go brutchutchustchi
