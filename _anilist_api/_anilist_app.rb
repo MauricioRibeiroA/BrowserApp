@@ -9,11 +9,15 @@ set :views, settings.root + '/html'
 get('/') do 
   @titles = []
   @time = []
+  @pics = []
   @@my_favourites_id.each do |id|
    if Anilist.anime_airing(id) != nil
      @titles << Anilist.anime_info(id)["title_romaji"]	
      @time << Anilist.anime_info(id)["airing"]["time"]
-     @new_hash = Hash[@titles.zip(@time)]
+     @pics << Anilist.anime_info(id)["image_url_med"]	
+      
+ @new_hash_2 = Hash[@time.zip(@pics)]
+     @new_hash = Hash[@titles.zip(@new_hash_2)]
    #@new_time << Time.parse(@time).strftime("%m/%d/%Y")
 end
 end
@@ -21,5 +25,3 @@ end
   erb:'_index'
  
 end
-
-

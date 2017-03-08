@@ -5,11 +5,15 @@
   </head>
   <body>
     <h1>Welcome! Here you can control all episodes from your favourite animes</h1>
+
     <% @new_hash.each do |anime, date| %>
-    <% new_date = Time.parse(date).strftime("%m/%d/%Y") %>
-    <h2>Hey my friend. <%= anime %> just announced the last episode on <%= new_date %></h2>
+    #<% new_date = Time.parse(date[0]).strftime("%m/%d/%Y") %>
+
+    <h2><img src="<%= date[1] %>"><%= anime %> just announced the last episode on <%= new_date %> </h2>
     <% end %>
+    
   </body>
 </html>
 
 Let's go brutchutchustchi
+
