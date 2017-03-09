@@ -151,11 +151,12 @@ body, html {
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="./pics/_agenda.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+
+      <img src="./pics/_agenda.jpg" style="width:100%" onclick="document.location=this.id+'./_agenda_main_page.erb';return false;" class="w3-hover-opacity" alt="Write down all your day">
     </div>
 
     <div class="w3-col m3">
-      <img src="./pics/_anilist.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      <img src="./pics/_anilist.png" style="width:100%" onclick="document.location=this.id+'./_anime_main_page.erb';return false;" class="w3-hover-opacity" alt="Check it out all infos from your favourite animes">
     </div>
 
     <div class="w3-col m3">

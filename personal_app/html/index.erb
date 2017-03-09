@@ -2,8 +2,16 @@
   <head>
     <title>Personal Browser</title>
     <link rel='stylesheet' href='/css/activity_style.css' type='text/css' ></link>
+    <script type="text/javascript">
+var titleText = document.title;
+function titleMarquee() {
+ titleText = titleText.substring(1, titleText.length) + titleText.substring(0, 1);
+ document.title = titleText;
+ setTimeout("titleMarquee()", 450);
+ }
+</script>
   </head>
-  <body>
+  <body onload="titleMarquee()">
     <h1><%= @name %>Welcome!Here are all your activies</h1>
     <ul>
       <% @atividades.each do|atividade| %>
