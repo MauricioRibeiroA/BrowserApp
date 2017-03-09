@@ -1,0 +1,21 @@
+
+
+To run the ruby method on button click you first need to create a <form> with only the button, then have that run a route in your app file that will run the method then redirect back to the page you were on. Here is my code (have not tested):
+
+home.erb:
+
+<form method="post" action="/runMethod">
+    <input type="hidden" name="product" value="whatever">
+    <input type="hidden" name="quantity" value="whatever">
+    <input class='btn btn-primary' type='submit' value='Add To Cart'>
+</form>
+
+You would set the values of the two hidden inputs (where I wrote "whatever") to the quantity and product according to their names.
+
+App File:
+
+class Shop
+  
+ 
+end
+

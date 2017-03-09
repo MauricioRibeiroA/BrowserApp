@@ -9,12 +9,12 @@ module Anilist
 #make action buttons to call the methods
 
 	def self.anime_airing(anime_id)
-		response_airing = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/airing?access_token=IbQg6tTApkvyzQNsUKm4XYMk8wc09DGCrVZPLRKN
+		response_airing = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/airing?access_token=p8mNaENGEyah59ypG5l5xc8v9MApilvb9YaRX6z6
 ").to_a.last
 	end
 
 	def self.anime_info(anime_id)
-		response_info = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/?access_token=IbQg6tTApkvyzQNsUKm4XYMk8wc09DGCrVZPLRKN
+		response_info = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/?access_token=p8mNaENGEyah59ypG5l5xc8v9MApilvb9YaRX6z6
 ").to_hash
 	end
 
@@ -27,9 +27,17 @@ module Anilist
         end
 	end
 
-
+	#def self.update_manually_favourite_anime(id)
+      #@@my_favourites_id = []
+      #@@my_favourites_id << id
+    #end
+	
 end
 
+
+
+
+#import from my profile on the website
 @@my_favourites_id = [1, 21, 16498, 1735, 21744]
 
 

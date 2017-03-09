@@ -1,4 +1,5 @@
 require_relative '_anilist_module'
+require_relative '_get_token_app'
 require 'sinatra'
 require 'json'
 require 'httparty'
@@ -24,4 +25,10 @@ end
 
   erb:'_index'
  
+end
+
+
+post '/runMethod' do
+  CallTokenable.update_token
+redirect '/'
 end
