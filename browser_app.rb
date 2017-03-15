@@ -6,16 +6,19 @@ require 'httparty'
 
 set :views, settings.root + '/html'
 
+get('/') do
+erb :'_main_page'
+end
 
-get('/') do 
+get('/anime') do 
   @titles = []
   @time = []
   @pics = []
   @@my_favourites_id.each do |id|
    if Anilist.anime_airing(id) != nil
-     @titles << Anilist.anime_info(id)["title_romaji"]	
+     @titles << Anilist.anime_info(id)["title_romaji"]  
      @time << Anilist.anime_info(id)["airing"]["time"]
-     @pics << Anilist.anime_info(id)["image_url_med"]	
+     @pics << Anilist.anime_info(id)["image_url_med"] 
       
  @new_hash_2 = Hash[@time.zip(@pics)]
      @new_hash = Hash[@titles.zip(@new_hash_2)]
@@ -23,7 +26,7 @@ get('/') do
 end
 end
 
-  erb:'_index'
+  erb :'_index'
  
 end
 

@@ -12,7 +12,7 @@ p $token
 end
 end
 
-
+CallTokenable.update_token
 
 
 =begin

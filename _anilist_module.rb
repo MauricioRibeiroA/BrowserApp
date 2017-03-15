@@ -9,12 +9,12 @@ module Anilist
 #make action buttons to call the methods
 
 	def self.anime_airing(anime_id)
-		response_airing = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/airing?access_token=p8mNaENGEyah59ypG5l5xc8v9MApilvb9YaRX6z6
+		response_airing = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/airing?access_token=BACsphPqQL9f4aHdHpGTBypQj7LiFBLHaw5XOKNf
 ").to_a.last
 	end
 
 	def self.anime_info(anime_id)
-		response_info = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/?access_token=p8mNaENGEyah59ypG5l5xc8v9MApilvb9YaRX6z6
+		response_info = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/?access_token=BACsphPqQL9f4aHdHpGTBypQj7LiFBLHaw5XOKNf
 ").to_hash
 	end
 
