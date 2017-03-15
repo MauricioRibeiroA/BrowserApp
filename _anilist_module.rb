@@ -7,14 +7,19 @@ require 'json'
 module Anilist
 #create an array with the id of all my favourites so I can iterate inside the method
 #make action buttons to call the methods
+def self.update_token
+response = HTTParty.post('https://anilist.co/api/auth/access_token?grant_type=client_credentials&client_id=mauribeiro-ps8tt&client_secret=QiUkcTJ3Ma9PdRcQC5LCw0sHE61p7').to_hash
+@token = response.values.first
+p @token
+end
 
 	def self.anime_airing(anime_id)
-		response_airing = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/airing?access_token=BACsphPqQL9f4aHdHpGTBypQj7LiFBLHaw5XOKNf
+		response_airing = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/airing?access_token=#{@token}
 ").to_a.last
 	end
 
 	def self.anime_info(anime_id)
-		response_info = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/?access_token=BACsphPqQL9f4aHdHpGTBypQj7LiFBLHaw5XOKNf
+		response_info = HTTParty.get("https://anilist.co/api/anime/#{anime_id}/?access_token=#{@token}
 ").to_hash
 	end
 
@@ -35,7 +40,7 @@ module Anilist
 end
 
 
-
+Anilist.update_token
 
 #import from my profile on the website
 @@my_favourites_id = [1, 21, 16498, 1735, 21744]

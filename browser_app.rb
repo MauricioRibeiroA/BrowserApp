@@ -1,13 +1,20 @@
-require_relative '_anilist_module'
 require_relative '_get_token_app'
+require_relative '_anilist_module'
 require 'sinatra'
 require 'json'
 require 'httparty'
 
 set :views, settings.root + '/html'
 
+=begin
+post('/') do
+  CallTokenable.update_token = @@magic_token
+redirect('/')
+end
+=end 
 get('/') do
 erb :'_main_page'
+
 end
 
 get('/anime') do 
@@ -31,7 +38,3 @@ end
 end
 
 
-post '/runMethod' do
-  CallTokenable.update_token
-redirect '/'
-end

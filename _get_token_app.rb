@@ -6,13 +6,13 @@ module CallTokenable
 
 def self.update_token
 response = HTTParty.post('https://anilist.co/api/auth/access_token?grant_type=client_credentials&client_id=mauribeiro-ps8tt&client_secret=QiUkcTJ3Ma9PdRcQC5LCw0sHE61p7').to_hash
-$token = response.values.first
-p $token
+@@token = response.values.first
+p @@token
 
 end
 end
 
-CallTokenable.update_token
+
 
 
 =begin
