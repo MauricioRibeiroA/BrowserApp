@@ -3,10 +3,59 @@
 <html>
 <head>
   <title>Browser App</title>
-</head>
-<body>
-<h1><a href='/anime'>Check out the new episodes from your favourites animes</a></h1>
+ 
+    <script type="text/javascript">
+var titleText = document.title;
+function titleMarquee() {
+ titleText = titleText.substring(1, titleText.length) + titleText.substring(0, 1);
+ document.title = titleText;
+ setTimeout("titleMarquee()", 450);
+ }
+</script>
+<style>
 
+
+
+
+h1 {
+	color: white;
+	margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+h3 {
+	color: rgb(255, 255, 255);
+	margin-left: 40px;
+	padding-top: 360px;
+}
+</style>
+ 
+</head>
+
+<body onload="titleMarquee()">
+
+<h1>My personal app</h1>
+<h3><a href='/anime'>Check out the new episodes from your favourites animes</a></h3>
+<h3><a href='/agenda'>Take notes</a></h3>
+
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="../_anilist.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/pics/_agenda.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+    </div>
+  </div>
 </body>
 </html>
-

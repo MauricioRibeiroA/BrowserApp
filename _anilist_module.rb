@@ -26,7 +26,7 @@ end
 	def self.anime_info_and_airing(id)
 	  Anilist.anime_info(id).each do |k, v|
 	    if v == "currently airing"
-	      p Anilist.anime_info(id)["title_romaji"]	
+	      p Anilist.anime_info(id)["title_romaji"]
 	      p Anilist.anime_info(id)["airing"]["time"]
 	      end
         end
@@ -36,7 +36,7 @@ end
       #@@my_favourites_id = []
       #@@my_favourites_id << id
     #end
-	
+
 end
 
 
@@ -56,7 +56,7 @@ end
 end
 =end
 
-=begin 
+=begin
 my_favourites_id.each do |id|
 	if Anilist.anime_airing(id) == nil
 		p "Status: not airing"

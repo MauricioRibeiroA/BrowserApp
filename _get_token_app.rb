@@ -14,19 +14,8 @@ end
 
 
 
-
 =begin
-<form action='/atividades/<%= atividade.id %>' method='POST' class='pull-right'>
-         <input type='hidden' name='_method' value='DELETE'/>
-          <button type='submit' class='super-sport'>X</button>
-=end
-
-
-
-
-=begin 
-
-<form action="/update_token" method="post">
-  <button type="submit" >Get a new token</button>
-</form>
+  <form method="post" action="/runMethod">
+      <input class='btn btn-primary' type='submit' value='Update Token'>
+    </form>
 =end

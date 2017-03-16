@@ -13,6 +13,7 @@ function titleMarquee() {
   </head>
   <body onload="titleMarquee()">
     <h1><%= @name %>Welcome!Here are all your activies</h1>
+    <h4><a href='/'>Back to the main page</a></h4>
     <ul>
       <% @atividades.each do|atividade| %>
        <%# form to delete an existing activity%>
